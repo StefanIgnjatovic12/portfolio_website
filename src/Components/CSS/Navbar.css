@@ -1,0 +1,40 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    border-bottom: 1px solid var(--primary-green-color) ;
+    background-color: var(--secondary-background);
+    justify-content: center;
+    grid-area: navbar;
+
+}
+
+.navbar-list {
+
+    /*list-style: none;*/
+    /*justify-self: center;*/
+    /*background-color: lightblue;*/
+
+
+}
+
+
+
+.navbar-links {
+    color: var(--primary-text-color);
+    font-size: 1.5em;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    display: inline-block;
+    transition-duration: 0.3s;
+}
+
+.navbar-links:hover {
+    color: var(--primary-green-color);
+    cursor: pointer;
+}
+
+

@@ -1,0 +1,37 @@
+[
+  {
+    "image": "images/CSS.svg",
+    "text": "CSS"
+  },
+
+
+  {
+    "image": "images/HTML.svg",
+    "text": "HTML"
+  },
+
+  {
+    "image": "images/git.svg",
+    "text": "Git"
+  },
+
+  {
+    "image": "images/Javascript.svg",
+    "text": "Javascript"
+  },
+
+  {
+    "image": "images/React JS.svg",
+    "text": "React"
+  },
+
+  {
+    "image": "images/Python.svg",
+    "text": "Python"
+  },
+
+  {
+    "image": "images/Django.svg",
+    "text": "Django"
+  }
+]

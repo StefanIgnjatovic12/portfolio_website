@@ -1,0 +1,44 @@
+import '../CSS/Content.css'
+
+
+export default function Projects(props) {
+    const projectSkills = props.projectskills.map(skill => {
+        return <span className="projects-skills">{skill}</span>
+    })
+    const demoLink = props.demo
+    const gitLink = props.github
+    return (
+        <div className="project-box">
+            <div className="project-title">
+                {props.title}
+
+                <div className="git-demo-buttons">
+
+                    <a href={`${gitLink}`}>
+                        <button className="git-button">
+                            Github
+                        </button>
+                    </a>
+
+
+                    <a href={`${demoLink}`}>
+                        <button className="demo-button">
+                            Demo
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+
+            <div className="project-skills">
+                {projectSkills}
+            </div>
+            <p className="project-description">
+                {props.description}
+            </p>
+        </div>
+    )
+}
+
+<button><a href="#">Button Text</a></button>
+
