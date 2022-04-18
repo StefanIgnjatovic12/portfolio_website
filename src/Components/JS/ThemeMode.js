@@ -1,54 +1,33 @@
 import '../CSS/ThemeMode.css'
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 const ThemeMode = () => {
     const lightTheme = "light"
     const darkTheme = "dark"
-    // let theme = localStorage.getItem('theme')
-    const [theme, setTheme] = useState(localStorage.getItem('theme'))
-    useEffect(() => {
-        console.log('use effect called')
-    }, [theme])
-
-    // useEffect(() => {
-    //     modeSwitch()
-    //     console.log('modeswitch')
-    // },[])
-
-    // theme = localStorage.getItem('theme')
+    const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light')
 
     const enableLightMode = () => {
         document.body.classList.add('lightmode')
-        // localStorage.setItem("theme", "light")
-        // theme = lightTheme
+        localStorage.setItem("theme", "light")
         setTheme(lightTheme)
 
     }
     const enableDarkMode = () => {
         document.body.classList.remove('lightmode')
-        // localStorage.setItem("theme", "dark")
-        // theme = darkTheme
+        localStorage.setItem("theme", "dark")
         setTheme(darkTheme)
     }
 
-    //checking local storage to see what the theme was during last session
-    const modeSwitch = () => {
-        if (theme === darkTheme) {
-            enableDarkMode()
-        } else if (theme === lightTheme) {
-            enableLightMode()
-        }
-    }
-    // modeSwitch()
+
     // Switching themes on button click
     const switchTheme = e => {
         if (theme === darkTheme) {
             enableLightMode()
-            console.log(theme)
+            console.log(localStorage.getItem('theme'))
         } else if (theme === lightTheme) {
             enableDarkMode()
-            console.log(theme)
-        }
+            console.log(localStorage.getItem('theme'))
+        } else(console.log(theme))
     }
 
 

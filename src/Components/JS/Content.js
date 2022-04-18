@@ -3,11 +3,12 @@ import Skills from "./Skills";
 import Projects from "./Projects"
 import data from './SkillData.json'
 import {Element} from 'react-scroll'
+import { v4 as uuid } from 'uuid';
 
 
 export default function Content() {
     const skillElements = data.map(entry => {
-        return <Skills text={entry.text} image={entry.image}/>
+        return <Skills key={uuid()} text={entry.text} image={entry.image}/>
     })
 
     return (
@@ -58,10 +59,9 @@ export default function Content() {
                     demo="https://www.google.com/"
                 />
                 <Projects
-                    title="Recipe finder by ingredients"
-                    description="Clone of Supercook which allows users to search
-                 for recipes that they can make with the ingredients they have on hand"
-                    projectskills={['javascript', 'python', 'django', 'bootstrap']}
+                    title="Internal issue tracker"
+                    description="Inspired by Jira and other similar products, the issue tracker/ticketing system allows for the management of user roles, projects and tickets used to request new features and report bugs "
+                    projectskills={['javascript', 'reactJS', 'materialUI', 'python', 'django', ]}
                     github="https://www.google.com/"
                     demo="https://www.google.com/"
                 />

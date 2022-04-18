@@ -1,9 +1,9 @@
 import '../CSS/Content.css'
-
+import { v4 as uuid } from 'uuid';
 
 export default function Projects(props) {
     const projectSkills = props.projectskills.map(skill => {
-        return <span className="projects-skills">{skill}</span>
+        return <span key={uuid()} className="projects-skills">{skill}</span>
     })
     const demoLink = props.demo
     const gitLink = props.github
