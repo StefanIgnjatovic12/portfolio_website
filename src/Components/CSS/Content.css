@@ -101,20 +101,25 @@
 .project-container {
     grid-area: project-container;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
+    flex-wrap: wrap;
 }
 
 .project-box {
     display: flex;
     flex-direction: column;
-    width: 584px;
-    height: fit-content;
+    width: 30rem;
+    /*height: fit-content;*/
+    height: 14rem;
     border-radius: 10px;
     background-color: var(--secondary-background);
     overflow-wrap: break-word;
-    padding: 15px
+    padding: 1rem;
+    margin-right: 2rem;
 }
-
+.project-box:nth-child(3) {
+    margin-top: 2rem;
+}
 .project-title {
     display: flex;
     width: 100%;
@@ -124,6 +129,7 @@
     font-weight: bold;
     padding-bottom: 25px;
     align-self: start;
+    justify-content: space-between;
 }
 
 .projects-skills {
@@ -172,10 +178,11 @@
 }
 
 .git-demo-buttons {
-    margin: auto;
+
 }
 
 button:hover {
     cursor: pointer;
 }
 /*Project row ends*/
+

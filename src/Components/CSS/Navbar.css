@@ -4,6 +4,7 @@
     position: fixed;
     width: 100%;
     top: 0;
+    /*height: 8vh;*/
     border-bottom: 1px solid var(--primary-green-color) ;
     background-color: var(--secondary-background);
     justify-content: center;

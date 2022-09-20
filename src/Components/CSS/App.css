@@ -6,11 +6,12 @@
     --primary-green-color: #2f9d6a;
     --skill-button-text: #4eca90;
     --skill-button-background: #123b28;
-/*    -----------------------------------------   */
+    /*    -----------------------------------------   */
 
 
 }
-.lightmode{
+
+.lightmode {
     --body-background: #d9d9d9;
     --secondary-background: #e6e6e6;
     --primary-text-color: #1D2430;
@@ -18,7 +19,7 @@
     --primary-green-color: #2f9d6a;
     --skill-button-text: #1D2430;
     --skill-button-background: #d9d9d9
-    }
+}
 
 body {
     background-color: var(--body-background);
@@ -29,15 +30,15 @@ body {
 /*}*/
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
-
 
 
 .grid-container {
     display: grid;
     grid-template-columns:  1fr 1fr 1fr;
-    grid-template-rows: 0.25fr 1fr 0.25fr 0.5fr 0.25fr 1fr 0.25fr 1fr 1fr;
+
+    grid-template-rows: 0.25fr 0.5fr 0.25fr 0.5fr 0.25fr 2fr 0.25fr 1fr 1fr;
     row-gap: 2em;
     column-gap: 1em;
     grid-template-areas:

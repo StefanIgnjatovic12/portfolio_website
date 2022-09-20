@@ -4,7 +4,9 @@ import {useState} from "react";
 const ThemeMode = () => {
     const lightTheme = "light"
     const darkTheme = "dark"
-    const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light')
+
+    // const [theme, setTheme] = useState(localStorage.getItem('theme') !== null ? localStorage.getItem('theme') : 'light')
+    const [theme, setTheme] = useState('dark')
 
     const enableLightMode = () => {
         document.body.classList.add('lightmode')
@@ -18,6 +20,9 @@ const ThemeMode = () => {
         setTheme(darkTheme)
     }
 
+    if (localStorage.getItem('theme') == null) {
+        enableDarkMode()
+    }
 
     // Switching themes on button click
     const switchTheme = e => {
