@@ -14,14 +14,14 @@ export default function Projects(props) {
 
                 <div className="git-demo-buttons">
 
-                    <a href={`${gitLink}`}>
+                    <a href={`${gitLink}`} target="_blank">
                         <button className="git-button">
                             Github
                         </button>
                     </a>
 
 
-                    <a href={`${demoLink}`}>
+                    <a href={`${demoLink}`} target="_blank">
                         <button className="demo-button">
                             Demo
                         </button>
