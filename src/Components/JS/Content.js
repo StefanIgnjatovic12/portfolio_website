@@ -23,7 +23,7 @@ export default function Content() {
                     Stefan Ignjatović
                 </div>
 
-                I am a self-thought full-stack web developer.
+                I am a self-taught full-stack web developer.
 
             </div>
 
