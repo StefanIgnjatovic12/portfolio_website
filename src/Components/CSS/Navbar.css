@@ -9,6 +9,7 @@
     background-color: var(--secondary-background);
     justify-content: center;
     grid-area: navbar;
+    z-index: 1000;
 
 }
 

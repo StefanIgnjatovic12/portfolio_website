@@ -1,5 +1,10 @@
 import '../CSS/Content.css'
-import { v4 as uuid } from 'uuid';
+import {v4 as uuid} from 'uuid';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import {Carousel} from 'react-responsive-carousel';
+import data from "./SkillData.json";
+import Skills from "./Skills";
+
 
 export default function Projects(props) {
     const projectSkills = props.projectskills.map(skill => {
@@ -7,35 +12,61 @@ export default function Projects(props) {
     })
     const demoLink = props.demo
     const gitLink = props.github
+    const imageArray = props.imageArray
+    console.log(imageArray)
+    // let imageArray = []
+    // if (projectTitle == 'Chat') {
+    //     imageArray.push(
+    //         process.env.PUBLIC_URL + "/images/Chat.png",
+    //         process.env.PUBLIC_URL +  "/images/ChatHiddenProfile.gif",
+    //         process.env.PUBLIC_URL +  "/images/ChatRevealedProfile.gif"
+    //     )
+    //
+    // }
+    // else if (projectTitle == 'Recipe finder by ingredients') {
+    //     imageArray.push(process.env.PUBLIC_URL + "/images/blue.png", process.env.PUBLIC_URL + "/images/blue.png", process.env.PUBLIC_URL + "/images/blue.png")
+    // }
+    //
+    const carouselElements = imageArray.map(entry => {
+        return <div><img className="carousel-image" src={entry} /></div>
+    })
+
     return (
         <div className="project-box">
-            <div className="project-title">
-                {props.title}
+            <div className="carousel">
+                <Carousel showThumbs={false} showStatus={false}>
+                    {carouselElements}
+                </Carousel>
+            </div>
+            <div className="project-text-container">
+                <div className="project-title">
+                    {props.title}
 
-                <div className="git-demo-buttons">
+                    <div className="git-demo-buttons">
 
-                    <a href={`${gitLink}`} target="_blank">
-                        <button className="git-button">
-                            Github
-                        </button>
-                    </a>
+                        <a href={`${gitLink}`} target="_blank">
+                            <button className="git-button">
+                                Github
+                            </button>
+                        </a>
 
 
-                    <a href={`${demoLink}`} target="_blank">
-                        <button className="demo-button">
-                            Demo
-                        </button>
-                    </a>
+                        <a href={`${demoLink}`} target="_blank">
+                            <button className="demo-button">
+                                Demo
+                            </button>
+                        </a>
 
+                    </div>
                 </div>
-            </div>
 
-            <div className="project-skills">
-                {projectSkills}
+                <div className="project-skills">
+                    {projectSkills}
+                </div>
+                <p className="project-description">
+                    {props.description}
+                </p>
             </div>
-            <p className="project-description">
-                {props.description}
-            </p>
         </div>
     )
 }

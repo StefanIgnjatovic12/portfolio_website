@@ -9,17 +9,17 @@
     font-weight: bold;
 }
 .hand {
-    width: 40px;
-    height: 40px;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 0.625rem;
+    margin-right: 0.625rem;
 }
 
 .header-icons {
-    width: 25px;
-    height: 25px;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 1.562rem;
+    height: 1.562rem;
+    margin-left: 0.625rem;
+    margin-right: 0.625rem;
 }
 .name {
     color: var(--primary-green-color);
@@ -36,18 +36,22 @@
     color: var(--primary-text-color);
     justify-self: start;
     grid-area: skill-container;
+    width: 65rem;
+
 }
 
 .skill-box {
     display: flex;
     flex-direction: column;
-    width: 100px;
-    height: 100px;
+    width: 7rem;
+    height: 6rem;
     background-color: var(--secondary-background);
-    border-radius: 10px;
-    margin: 0 50px 0 50px;
+    border-radius: 0 25% 25% 25%;
+    /*border-radius: 0.625rem;*/
+    margin: 0 3.125rem 0 3.125rem;
     justify-content: center;
     align-items: center;
+
 
 }
 
@@ -62,13 +66,13 @@
 
 .skill-image > img {
     padding: 10px 0 5px 0;
-    height: 45px;
-    width: 45px;
+    height: 2.812rem;
+    width: 2.812rem;
 }
 
 
 .skill-text {
-    padding-top: 5px;
+    padding-top: 0.2rem;
     margin: auto;
     color:  var(--secondary-text-color);
 }
@@ -101,24 +105,41 @@
 .project-container {
     grid-area: project-container;
     display: flex;
+    flex-direction: column;
     justify-content: start;
     flex-wrap: wrap;
 }
 
+
 .project-box {
     display: flex;
     flex-direction: column;
-    width: 30rem;
+    /*width: 63rem;*/
+    width: 100%;
     /*height: fit-content;*/
-    height: 14rem;
-    border-radius: 10px;
+    height: 45rem;
+    border-radius: 0.625rem;
     background-color: var(--secondary-background);
     overflow-wrap: break-word;
-    padding: 1rem;
-    margin-right: 2rem;
+    /*padding: 1rem;*/
+
+
 }
-.project-box:nth-child(3) {
-    margin-top: 2rem;
+.project-box:nth-child(2),
+.project-box:nth-child(3){
+    margin-top: 3rem;
+}
+
+.carousel {
+    border-radius: 0.625rem 0.625rem 0.625rem 0.625rem ;
+}
+.carousel-image {
+    margin-bottom: 2rem;
+
+}
+
+.project-text-container {
+    margin: 1rem;
 }
 .project-title {
     display: flex;
@@ -133,11 +154,11 @@
 }
 
 .projects-skills {
-    margin:0 10px 0 10px;
-    padding: 5px 7px 5px 7px;
+    margin:0 0.625rem 0 0.625rem;
+    padding: 0.312rem 0.437rem 0.312rem 0.437rem;
     color:  var(--skill-button-text);
     background-color: var(--skill-button-background);
-    border-radius: 5px;
+    border-radius: 0.312rem;
     align-self: start;
 
 }
@@ -148,14 +169,14 @@
 
 .project-description {
     color:  var(--secondary-text-color);
-    padding-top: 15px;
+    padding-top: 1rem;
 }
 
 .git-button {
     background-color: transparent;
-    padding: 5px 7px 5px 7px;
-    border-radius: 5px;
-    border: 2px solid var(--primary-green-color);
+    padding: 0.312rem 0.437rem 0.312rem 0.437rem;
+    border-radius: 0.312rem;
+    border: 0.125rem solid var(--primary-green-color);
     color: var(--primary-green-color);
     font-weight: bold;
 
@@ -168,14 +189,15 @@
 
 .demo-button {
     background-color: transparent;
-    padding: 5px 7px 5px 7px;
-    border-radius: 5px;
-    border: 2px solid var(--primary-green-color);
+    padding: 0.312rem 0.437rem 0.312rem 0.437rem;
+    border-radius: 0.312rem;
+    border: 0.125rem solid var(--primary-green-color);
     color: var(--primary-green-color);
     font-weight: bold;
     margin-left: 10px;
 
 }
+
 
 .git-demo-buttons {
 
