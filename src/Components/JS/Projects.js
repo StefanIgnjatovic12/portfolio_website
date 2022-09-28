@@ -14,7 +14,7 @@ export default function Projects(props) {
     const gitLink = props.github
     const imageArray = props.imageArray
     const carouselElements = imageArray.map(entry => {
-        return <div><img className="carousel-image" src={entry} /></div>
+        return <div key={uuid()}><img className="carousel-image" src={entry} /></div>
     })
 
     return (
