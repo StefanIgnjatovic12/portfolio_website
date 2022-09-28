@@ -5,6 +5,11 @@ import {Element} from 'react-scroll'
 
 export default function ContactForm() {
     const {register, handleSubmit, watch, formState: {errors}} = useForm();
+    console.log('with REACT_APP')
+        console.log(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID,process.env.REACT_APP_USER_ID)
+    console.log('without REACT_APP')
+        console.log(process.env.SERVICE_ID, process.env.TEMPLATE_ID,process.env.USER_ID)
+
     const onSubmit = data => emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, data, process.env.REACT_APP_USER_ID)
         .then(function (response) {
             console.log('SUCCESS!', response.status, response.text);
