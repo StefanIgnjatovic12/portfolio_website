@@ -13,20 +13,6 @@ export default function Projects(props) {
     const demoLink = props.demo
     const gitLink = props.github
     const imageArray = props.imageArray
-    console.log(imageArray)
-    // let imageArray = []
-    // if (projectTitle == 'Chat') {
-    //     imageArray.push(
-    //         process.env.PUBLIC_URL + "/images/Chat.png",
-    //         process.env.PUBLIC_URL +  "/images/ChatHiddenProfile.gif",
-    //         process.env.PUBLIC_URL +  "/images/ChatRevealedProfile.gif"
-    //     )
-    //
-    // }
-    // else if (projectTitle == 'Recipe finder by ingredients') {
-    //     imageArray.push(process.env.PUBLIC_URL + "/images/blue.png", process.env.PUBLIC_URL + "/images/blue.png", process.env.PUBLIC_URL + "/images/blue.png")
-    // }
-    //
     const carouselElements = imageArray.map(entry => {
         return <div><img className="carousel-image" src={entry} /></div>
     })

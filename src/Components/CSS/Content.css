@@ -46,11 +46,12 @@
     width: 7rem;
     height: 6rem;
     background-color: var(--secondary-background);
-    border-radius: 0 25% 25% 25%;
+    border-radius: 0 12% 12% 12%;
     /*border-radius: 0.625rem;*/
     margin: 0 3.125rem 0 3.125rem;
     justify-content: center;
     align-items: center;
+    padding: 0.25rem;
 
 
 }
@@ -117,7 +118,7 @@
     /*width: 63rem;*/
     width: 100%;
     /*height: fit-content;*/
-    height: 45rem;
+    min-height: 46rem;
     border-radius: 0.625rem;
     background-color: var(--secondary-background);
     overflow-wrap: break-word;
@@ -139,7 +140,7 @@
 }
 
 .project-text-container {
-    margin: 1rem;
+    margin: 1rem 2rem 2rem 2rem;
 }
 .project-title {
     display: flex;

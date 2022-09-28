@@ -1,12 +1,11 @@
 import {useForm} from "react-hook-form";
 import '../CSS/ContactForm.css'
 import emailjs from '@emailjs/browser'
-import {SERVICE_ID, TEMPLATE_ID, USER_ID} from "../../emailkey";
 import {Element} from 'react-scroll'
 
 export default function ContactForm() {
     const {register, handleSubmit, watch, formState: {errors}} = useForm();
-    const onSubmit = data => emailjs.send(SERVICE_ID, TEMPLATE_ID, data, USER_ID)
+    const onSubmit = data => emailjs.send(process.env.SERVICE_ID, process.env.TEMPLATE_ID, data, process.env.USER_ID)
         .then(function (response) {
             console.log('SUCCESS!', response.status, response.text);
         }, function (error) {
