@@ -24,6 +24,7 @@
 .name {
     color: var(--primary-green-color);
     font-size: 2em;
+
 }
 
 /*Intro row end*/
@@ -209,3 +210,15 @@ button:hover {
 }
 /*Project row ends*/
 
+.error-text {
+    color: #ff4d4d;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.success-message {
+    justify-self: center;
+    margin-top: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-text-color)
+}

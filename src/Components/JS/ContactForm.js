@@ -2,44 +2,71 @@ import {useForm} from "react-hook-form";
 import '../CSS/ContactForm.css'
 import emailjs from '@emailjs/browser'
 import {Element} from 'react-scroll'
+import {ErrorMessage} from '@hookform/error-message';
+import {useState} from "react";
 
+const SERVICE_ID = 'service_9rh1lo4'
+const TEMPLATE_ID = 'template_wrxayfb'
+const USER_ID = 'user_ONNhRXFDCa0D3ABXXbPqK'
 export default function ContactForm() {
-    const {register, handleSubmit, watch, formState: {errors}} = useForm();
-    console.log('with REACT_APP')
-        console.log(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID,process.env.REACT_APP_USER_ID)
+    const {register, handleSubmit, reset, formState: {errors}} = useForm();
+    const [showSuccessMessage, setShowSuccessMessage] = useState(false)
 
-    const onSubmit = data => emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, data, process.env.REACT_APP_USER_ID)
+    const onSubmit = data => emailjs.send(SERVICE_ID, TEMPLATE_ID, data, USER_ID)
         .then(function (response) {
-            console.log('SUCCESS!', response.status, response.text);
+            reset()
+            setShowSuccessMessage(true)
+
+            // console.log('SUCCESS!', response.status, response.text);
         }, function (error) {
             console.log('FAILED...', error);
         });
 
-    console.log(watch("example")); // watch input value by passing the name of it
-
+    const getErrorName = () => {
+        if (errors.name) {
+            return 'name'
+        } else if (errors.email) {
+            return 'email'
+        } else if (errors.message) {
+            return 'message'
+        }
+    }
+    const getErrorText = () => {
+        if (errors.name) {
+            return 'Please fill out the name field'
+        } else if (errors.email) {
+            return 'Please fill out the email field'
+        } else if (errors.message) {
+            return 'Please fill out the message field'
+        }
+    }
     return (
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
         <>
 
             <div className="contact-header">
-
                 <Element id="scrollToContact">
                     <img className="header-icons" src={process.env.PUBLIC_URL + "/images/contact.png"} alt=""/>
                     Contact
                 </Element>
             </div>
+
             <div className="contact-form">
 
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* register your input into the hook by invoking the "register" function */}
 
-                    {/* include validation with required or other standard HTML validation rules */}
+                    <ErrorMessage
+                        errors={errors}
+                        name={getErrorName()}
+                        render={() => <div className='error-text'>{getErrorText()}</div>}/>
+
                     <input
                         placeholder="Full name"
                         className="form-name"
                         {...register("name", {required: true})}
                     />
-                    {errors.name?.type === 'required' && "Please provide your name"}
+
 
                     <input
                         placeholder="Email address"
@@ -51,12 +78,14 @@ export default function ContactForm() {
                         className="form-message"
                         {...register("message", {required: true})}
                     />
-                    {/* errors will return when field validation fails  */}
-                    {errors.exampleRequired && <span>This field is required</span>}
 
-                    <input className="form-button" type="submit"/>
+                    <input className="form-button" type="submit" />
+
+
                 </form>
+
             </div>
+
         </>
     );
 }
