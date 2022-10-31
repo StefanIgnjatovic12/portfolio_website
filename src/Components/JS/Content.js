@@ -51,7 +51,7 @@ export default function Content() {
 
             <div className="project-container">
                 <Projects
-                    title="Chat"
+                    title="AnonChat"
                     description="When a user creates an account, they are randomly matched with another user in an anonymous chat. If both members press the 'reveal' button,
                     their real profiles containing additional information pertaining to their identity will be made available to the conversation partner"
                     projectskills={['javascript', 'reactJS', 'socket.io', 'python', 'django',]}
@@ -66,7 +66,7 @@ export default function Content() {
                     demo="https://drf-react-chat-frontend.herokuapp.com/"
                 />
                 <Projects
-                    title="Internal issue tracker"
+                    title="Project manager/issue tracker"
                     description="Inspired by Jira and other similar products, the issue tracker/ticketing system allows
                      for the management of user roles, projects and tickets used to request new features and report bugs "
                     projectskills={['javascript', 'reactJS', 'materialUI', 'python', 'django',]}
